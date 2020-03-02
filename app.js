@@ -20,6 +20,11 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
     //     console.log('inserted');
     // })
 
+    db.collection('mammals').find().toArray(function (err, result) {
+        if (err) throw err;
+        console.log(result)
+    });
+
     // updating our database
     // db.collection('mammals').findOneAndUpdate({
     //     _id: newObjectId('...')
@@ -38,9 +43,11 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
 
     // db.collection('mammals').deleteAndFind({ name: 'Emmanuel Iyanu' });
 
-    db.collection('mammals').findOneAndDelete({
-        _id: newObjectId('...')
-    }).then(result => {
-        console.log(result);
-    });
+    // db.collection('mammals').findOneAndDelete({
+    //     _id: newObjectId('...')
+    // }).then(result => {
+    //     console.log(result);
+    // });
+
+
 })
